@@ -1,0 +1,129 @@
+/* ============================================
+   ĐỊNH DẠNG CHUNG
+   ============================================ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ============================================
+   KHUNG MENU CHÍNH
+   ============================================ */
+#menu {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+}
+
+/* ============================================
+   RESET CHO UL, LI
+   ============================================ */
+#menu ul,
+#menu li {
+    padding: 0;
+    margin: 0;
+}
+
+/* ============================================
+   ĐỊNH DẠNG MỤC MENU (LI)
+   ============================================ */
+#menu li {
+    position: relative;      /* Cho phép menu con định vị theo */
+    float: left;             /* Dàn ngang */
+    list-style: none;        /* Bỏ dấu chấm */
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================
+   ĐỊNH DẠNG LIÊN KẾT MENU CHÍNH (A)
+   ============================================ */
+#menu li a {
+    width: 100px;            /* Chiều rộng mỗi mục */
+    height: 30px;            /* Chiều cao */
+    display: block;          /* Toàn bộ vùng click được */
+    text-decoration: none;   /* Bỏ gạch chân */
+    text-align: center;      /* Căn giữa chữ */
+    line-height: 30px;       /* Căn giữa theo chiều dọc */
+    background-color: black; /* Nền đen */
+    color: white;            /* Chữ trắng */
+    transition: background-color 0.3s ease;
+}
+
+/* ============================================
+   ĐỊNH DẠNG LIÊN KẾT MENU CON
+   ============================================ */
+#menu ul ul li a {
+    width: 200px;            /* Menu con rộng hơn */
+    text-align: left;        /* Căn trái */
+    padding-left: 10px;      /* Thụt lề trái */
+}
+
+/* ============================================
+   HIỆU ỨNG HOVER CHO LIÊN KẾT
+   ============================================ */
+#menu li a:hover {
+    background-color: red;   /* Đổi nền đỏ khi hover */
+}
+
+/* ============================================
+   ĐỊNH DẠNG MENU CON (UL UL)
+   ============================================ */
+#menu ul ul {
+    position: absolute;      /* Định vị tuyệt đối */
+    top: 30px;               /* Ngay dưới mục cha */
+    left: 15px;              /* Thụt vào 15px */
+    visibility: hidden;      /* Ẩn menu con mặc định */
+    z-index: 100;            /* Nằm trên các phần tử khác */
+}
+
+/* ============================================
+   HIỂN THỊ MENU CON KHI HOVER
+   ============================================ */
+#menu ul li:hover ul {
+    visibility: visible;     /* Hiện menu con khi hover */
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #menu {
+        height: auto;
+    }
+
+    #menu li {
+        float: none;
+        width: 100%;
+    }
+
+    #menu li a {
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    #menu ul ul {
+        position: static;
+        visibility: visible;
+        display: none;
+        padding-left: 20px;
+    }
+
+    #menu ul li:hover ul {
+        display: block;
+    }
+
+    #menu ul ul li a {
+        width: 100%;
+    }
+}
